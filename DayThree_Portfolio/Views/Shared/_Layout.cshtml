@@ -1,0 +1,166 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("About", "About", "Home")</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li>@Html.ActionLink("Grid Demo", "GridDemo", "Home")</li>
+                    <li><a href="#" data-toggle="modal" data-target="#myModal">JS Exercises</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>
+
+    <!--Modals-->
+    <div id="myModal" class="modal fade" role="dialog">
+        <div class="modal-dialog modal-lg">
+
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-body">
+                    <ul class="nav nav-pills">
+                        <li class="active"><a data-toggle="pill" href="#math">Math</a></li>
+                        <li><a data-toggle="pill" href="#product">Product</a></li>
+                        <li><a data-toggle="pill" href="#mean">Mean</a></li>
+                        <li><a data-toggle="pill" href="#min">Min</a></li>
+                        <li><a data-toggle="pill" href="#max">Max</a></li>
+                    </ul>
+
+                    <div class="tab-content">
+                        <div id="math" class="tab-pane fade in active">
+                            <hr />
+                            <div class="row h2 text-center">
+                                JS EXERCISES
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3" for="num1">Enter number 1:</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="num1" placeholder="Enter number 1">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3" for="num2">Enter number 2:</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="num2" placeholder="Enter number 2">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3" for="num3">Enter number 3:</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="num3" placeholder="Enter number 3">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3" for="num4">Enter number 4:</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="num4" placeholder="Enter number 4">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3" for="num5">Enter number 5:</label>
+                                        <div class="col-sm-9">
+                                            <input type="number" class="form-control" id="num5" placeholder="Enter number 5">
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <br />
+                                            <div class="btn-group">
+                                                <button id="btnCalc" type="button" class="btn btn-primary">Calculate</button>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                        Show Code <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li><a href="#"><b>JS / jQuery</b></a></li>
+                                                        <li><a href="#"><b>CSS</b></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="row"><p id="output1"></p></div>
+                                    <div class="row"><p id="output2"></p></div>
+                                    <div class="row"><p id="output3"></p></div>
+                                    <div class="row"><p id="output4"></p></div>
+                                    <div class="row"><p id="output5"></p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="product" class="tab-pane fade">
+                            <h3>THE PRODUCT IS</h3>
+                            <p id=""></p>
+                        </div>
+                        <div id="mean" class="tab-pane fade">
+                            <h3>THE MEAN IS</h3>
+                            <p id=""></p>
+                        </div>
+                        <div id="min" class="tab-pane fade">
+                            <h3>THE MIN IS</h3>
+                            <p id=""></p>
+                        </div>
+                        <div id="max" class="tab-pane fade">
+                            <h3>THE MAX IS</h3>
+                            <p id=""></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div class="form-group">
+                        <div class="col-sm-offset-2 col-sm-10">
+                            <br />
+                            <div class="btn-group">
+                                <button id="btnClear" type="button" class="btn btn-primary btn-lg">Clear</button>
+                                <button type="button" class="btn btn-primary btn-lg" data-dismiss="modal">Close</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="~/Scripts/JSExercises.js"></script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

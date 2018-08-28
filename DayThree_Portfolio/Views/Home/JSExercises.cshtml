@@ -1,0 +1,102 @@
+﻿
+@{
+    ViewBag.Title = "JSExercises";
+}
+
+<div class="container">
+    <div class="row h2 text-center">
+        JS EXERCISES
+    </div>
+    <hr />
+    <div class="row">
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="num1">Enter number 1:</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="num1" placeholder="Enter number 1">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="num2">Enter number 2:</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="num2" placeholder="Enter number 2">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="num3">Enter number 3:</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="num3" placeholder="Enter number 3">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="num4">Enter number 4:</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="num4" placeholder="Enter number 4">
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="control-label col-sm-2" for="num5">Enter number 5:</label>
+            <div class="col-sm-10">
+                <input type="number" class="form-control" id="num5" placeholder="Enter number 5">
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <br />
+                <div class="btn-group">
+
+                    <button id="btnCalc" type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">Calculate</button>
+                    <button id="btnClear" type="button" class="btn btn-primary">Clear</button>
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                            Show Code <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu" role="menu">
+                            <li><a href="#"><b>JS / jQuery</b></a></li>
+                            <li><a href="#"><b>CSS</b></a></li>
+                        </ul>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+@section scripts {
+
+    <script>
+        //First thing I need to do is handle a click event for the btn1 button
+        $("#btnCalc").click(function () {
+            //When the button is clicked I need to do three things...
+            //Thing 1: Acquire the user data
+            var num1 = Number($("#num1").val());
+            var num2 = Number($("#num2").val());
+            var num3 = Number($("#num3").val());
+            var num4 = Number($("#num4").val());
+            var num5 = Number($("#num5").val());
+
+            //Thing 2: Perform some set of calculations on the user data
+            var sum = num1 + num2 + num3 + num4 + num5;
+            var product = num1 * num2 * num3 * num4 * num5;
+            var mean = sum / 5;
+            var min = Math.min(num1, num2, num3, num4, num5);
+            var max = Math.max(num1, num2, num3, num4, num5);
+
+            //Thing 3: Write some results back to the screen for the user to see
+            $("#output1").text("The sum of your numbers is " + sum);
+            $("#output2").html("The <b>product</b> of your numbers is <b>" + product + "</b>");
+            $("#output3").html("The <b>mean</b> of your numbers is <b>" + mean + "</b>");
+            $("#output4").html("The <b>minimum</b> number entered is <b>" + min + "</b>");
+            $("#output5").html("The <b>maximum</b> number entered is <b>" + max + "</b>");
+        });
+
+        $("#btnClear").click(function () {
+            $("#num1, #num2, #num3, #num4, #num5").val("");
+            $("#output1, #output2, #output3, #output4, #output5").html("");
+        });
+    </script>
+
+}
+
+
