@@ -10,9 +10,13 @@
         var num4 = $("#num4").val();
         var num5 = $("#num5").val();
 
-        if (num1 !== "" && num2 !== "" && num3 !== "" && num4 !== "" && num5 !== "") {
+        if (num1 === "" || num2 === "" || num3 === "" || num4 === "" || num5 === "") {
+            alert("Hey you didnt give me all the input I asked for");
+            return;
+        }
+        else {
             //Thing 2: Perform some set of calculations on the user data
-            var sum = +num1 + +num2 + +num3 + +num4 + +num5;
+            var sum = Number(num1) + Number(num2) + Number(num3) + Number(num4) + Number(num5);
             var product = +num1 * +num2 * +num3 * +num4 * +num5;
             var mean = sum / 5;
             var min = Math.min(num1, num2, num3, num4, num5);
@@ -25,10 +29,6 @@
             $("#output4").html("The <b>minimum</b> number entered is <b>" + min + "</b>");
             $("#output5").html("The <b>maximum</b> number entered is <b>" + max + "</b>");
         }
-        else {
-            swal("Uh Oh...Looks like some data was missing!", "Woops", "error");
-        }
-
 
     });
 
@@ -54,6 +54,7 @@
         }
 
         //Approach #2: Working with an Array (1 liner)
+        //revword = word.split("").reverse().join("");
 
         //Step 3: Write output to the screen
         if (word.toUpperCase() === revWord.toUpperCase()) {
