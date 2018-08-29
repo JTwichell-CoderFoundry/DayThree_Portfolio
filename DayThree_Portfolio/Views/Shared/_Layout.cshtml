@@ -6,7 +6,7 @@
     <title>@ViewBag.Title - My ASP.NET Application</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-
+    <link href="~/Content/Custom.css" rel="stylesheet" />
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -47,10 +47,9 @@
                 <div class="modal-body">
                     <ul class="nav nav-pills">
                         <li class="active"><a data-toggle="pill" href="#math">Math</a></li>
-                        <li><a data-toggle="pill" href="#product">Product</a></li>
-                        <li><a data-toggle="pill" href="#mean">Mean</a></li>
-                        <li><a data-toggle="pill" href="#min">Min</a></li>
-                        <li><a data-toggle="pill" href="#max">Max</a></li>
+                        <li><a data-toggle="pill" href="#palindrome">Palindrome</a></li>
+                        <li><a data-toggle="pill" href="#factorial">Factorial</a></li>
+                        <li><a data-toggle="pill" href="#fizzbuzz">FizzBuzz</a></li>
                     </ul>
 
                     <div class="tab-content">
@@ -120,22 +119,57 @@
                             </div>
                         </div>
 
-                        <div id="product" class="tab-pane fade">
-                            <h3>THE PRODUCT IS</h3>
+                        <div id="palindrome" class="tab-pane fade">
+                            <hr />
+                            <div class="row h2 text-center">
+                                PALINDROME
+                            </div>
+                            <hr />
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="form-group">
+                                        <label class="control-label col-sm-3" for="num1">Enter a word:</label>
+                                        <div class="col-sm-9">
+                                            <input type="text" class="form-control" id="word1" placeholder="Enter a word">
+                                        </div>
+                                    </div>
+                                   
+                                    <div class="form-group">
+                                        <div class="col-sm-offset-2 col-sm-10">
+                                            <br />
+                                            <div class="btn-group">
+                                                <button id="btnPalindrome" type="button" class="btn btn-primary">Click Me</button>
+                                                <div class="btn-group">
+                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                        Show Code <span class="caret"></span>
+                                                    </button>
+                                                    <ul class="dropdown-menu" role="menu">
+                                                        <li><a href="#"><b>JS / jQuery</b></a></li>
+                                                        <li><a href="#"><b>CSS</b></a></li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div id="palout" class="row">
+                                        @*<p id="palout"></p>*@
+                                    </div>                                    
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                        <div id="factorial" class="tab-pane fade">
+                            <h3>FACTORIAL</h3>
                             <p id=""></p>
                         </div>
-                        <div id="mean" class="tab-pane fade">
-                            <h3>THE MEAN IS</h3>
+                        <div id="fizzbuzz" class="tab-pane fade">
+                            <h3>FIZZ-BUZZ</h3>
                             <p id=""></p>
-                        </div>
-                        <div id="min" class="tab-pane fade">
-                            <h3>THE MIN IS</h3>
-                            <p id=""></p>
-                        </div>
-                        <div id="max" class="tab-pane fade">
-                            <h3>THE MAX IS</h3>
-                            <p id=""></p>
-                        </div>
+                        </div>                        
                     </div>
                 </div>
                 <div class="modal-footer">

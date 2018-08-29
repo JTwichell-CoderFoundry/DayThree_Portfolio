@@ -29,12 +29,39 @@
             swal("Uh Oh...Looks like some data was missing!", "Woops", "error");
         }
 
-        
+
     });
 
     $("#btnClear").click(function () {
         $("#num1, #num2, #num3, #num4, #num5").val("");
         $("#output1, #output2, #output3, #output4, #output5").html("");
+        $("#word1").val("");
+        $("#palout").html("");
+    });
+
+    $("#btnPalindrome").click(function () {
+        //Step 1: Gather user input
+        var word = $("#word1").val();
+
+        //Step 2: Do something with the input
+        //What we need to do is reverse the original word
+        //This can be achieved in a few different ways
+
+        //Approach #1: Decrementing For Loop
+        var revWord = "";
+        for (var loop = word.length - 1; loop >= 0; loop--) {
+            revWord += word.substr(loop, 1);
+        }
+
+        //Approach #2: Working with an Array (1 liner)
+
+        //Step 3: Write output to the screen
+        if (word.toUpperCase() === revWord.toUpperCase()) {
+            $("#palout").text(word + " is a palindrome");
+        }
+        else {
+            $("#palout").text(word + " is not a palindrome");
+        }
     });
 
 });
