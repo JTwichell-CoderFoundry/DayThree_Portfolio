@@ -21,6 +21,10 @@
     <!-- Custom Fonts -->
     <link href="~/Content/font-awesome.min.css" rel="stylesheet" />
 
+    <!--Syntax Highlighter-->
+    <link href="~/Scripts/SyntaxHighlighter/styles/shCore.css" rel="stylesheet" />
+    <link href="~/Scripts/SyntaxHighlighter/styles/shThemeDefault.css" rel="stylesheet" />
+    
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css">
 
@@ -30,6 +34,7 @@
         <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
         <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+
 </head>
 <body id="page-top" class="index">
     <!-- Navigation -->
@@ -614,13 +619,9 @@
                                             <div class="btn-group">
                                                 <button id="btnCalc" type="button" class="btn btn-primary">Calculate</button>
                                                 <div class="btn-group">
-                                                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                                                    <button id="btnShowCode" type="button" class="btn btn-primary">
                                                         Show Code <span class="caret"></span>
-                                                    </button>
-                                                    <ul class="dropdown-menu" role="menu">
-                                                        <li><a href="#"><b>JS / jQuery</b></a></li>
-                                                        <li><a href="#"><b>CSS</b></a></li>
-                                                    </ul>
+                                                    </button>                                                    
                                                 </div>
                                             </div>
                                         </div>
@@ -634,6 +635,43 @@
                                     <div class="row"><p id="output5"></p></div>
                                 </div>
                             </div>
+           
+                            <br />
+                            <div class="row" id="code">
+                                <div class="col-md-12">
+                                    <pre class="brush: js">
+                                                $("#btnCalc").click(function () {
+                                                    //When the button is clicked I need to do three things...
+                                                    //Thing 1: Acquire the user data
+                                                    var num1 = $("#num1").val();
+                                                    var num2 = $("#num2").val();
+                                                    var num3 = $("#num3").val();
+                                                    var num4 = $("#num4").val();
+                                                    var num5 = $("#num5").val();
+
+                                                    if (num1 === "" || num2 === "" || num3 === "" || num4 === "" || num5 === "") {
+                                                        alert("Hey you didnt give me all the input I asked for");
+                                                    }
+                                                    else {
+                                                        //Thing 2: Perform some set of calculations on the user data
+                                                        var sum = Number(num1) + Number(num2) + Number(num3) + Number(num4) + Number(num5);
+                                                        var product = +num1 * +num2 * +num3 * +num4 * +num5;
+                                                        var mean = sum / 5;
+                                                        var min = Math.min(num1, num2, num3, num4, num5);
+                                                        var max = Math.max(num1, num2, num3, num4, num5);
+
+                                                        //Thing 3: Write some results back to the screen for the user to see
+                                                        $("#output1").text("The sum of your numbers is " + sum);
+                                                        $("#output2").html("The <b>product</b> of your numbers is <b>" + product + "</b>");
+                                                        $("#output3").html("The <b>mean</b> of your numbers is <b>" + mean + "</b>");
+                                                        $("#output4").html("The <b>minimum</b> number entered is <b>" + min + "</b>");
+                                                        $("#output5").html("The <b>maximum</b> number entered is <b>" + max + "</b>");
+                                                    }
+                                                });
+                                            </pre>
+                                </div>
+                            </div>
+
                         </div>
 
                         <div id="palindrome" class="tab-pane fade">
@@ -718,9 +756,17 @@
     <script src="~/Scripts/jqBootstrapValidation.js"></script>
     <script src="~/Scripts/contact_me.js"></script>
 
+    <!--Syntax Highlighter-->
+    <script src="~/Scripts/SyntaxHighlighter/scripts/shCore.js"></script>
+    <script src="~/Scripts/SyntaxHighlighter/scripts/shBrushJScript.js"></script>
+
     <!-- Theme JavaScript -->
     <script src="~/Scripts/freelancer.min.js"></script>
     <script src="~/Scripts/JSExercises.js"></script>
+
+    <script>
+        SyntaxHighlighter.all();
+    </script>
 
 
 </body>

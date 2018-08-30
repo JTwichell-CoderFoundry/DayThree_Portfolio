@@ -1,5 +1,24 @@
 ﻿$(document).ready(function () {
 
+    //This line of code executes as soon as the document is ready and hides the div tag holding our pre tag
+    $("#code").hide();
+
+    $("#btnShowCode").click(function () {        
+        $("#code").toggle();        
+        //if ($(this).text().indexOf("Show") >= 0) {
+        //    $("#btnShowCode").html("Hide Code <span class='dropup'><span class='caret'></span></span>");
+        //}
+        //else {
+        //    $("#btnShowCode").html("Show Code <span class='caret'></span>");
+        //}
+        if ($(this).text().indexOf("Show") >= 0) {
+        $("#btnShowCode").html("Hide Code <i class='fa fa-caret-up' />");
+        }
+        else {
+            $("#btnShowCode").html("Show Code <i class='fa fa-caret-down' />");
+        }
+    });
+
     //First thing I need to do is handle a click event for the btn1 button
     $("#btnCalc").click(function () {
         //When the button is clicked I need to do three things...
@@ -31,7 +50,7 @@
         }
 
     });
-
+    
     $("#btnClear").click(function () {
         $("#num1, #num2, #num3, #num4, #num5").val("");
         $("#output1, #output2, #output3, #output4, #output5").html("");
