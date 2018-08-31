@@ -237,6 +237,7 @@ section.success {
 #portfolio .portfolio-item .portfolio-link .caption .caption-content h4 {
   margin: 0;
 }
+
 #portfolio * {
   z-index: 2;
 }

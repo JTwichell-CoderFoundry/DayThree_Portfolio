@@ -4,3 +4,23 @@
     max-width: 300px;
 }
 
+.basicFB {
+font-weight: bold;
+    font-size:large;
+}
+.boldRed {   
+    color: red
+}
+
+.boldBlue { 
+    color: blue
+}
+
+.boldGreen {
+    color: green;
+}
+
+#fizzBuzzOut {
+    max-height: 100px;
+    overflow-y: auto;
+}
